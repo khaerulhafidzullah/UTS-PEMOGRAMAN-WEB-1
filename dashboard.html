@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - StoryVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand"><i class="fas fa-book-open"></i> StoryVerse</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="stok.html"><i class="fas fa-box-open"></i> Stok & Katalog</a></li>
+                <li><a href="pesanan.html"><i class="fas fa-clipboard-list"></i> History Pesanan</a></li> <!-- Ini Menu Barunya -->
+                <li><a href="checkout.html" target="_blank"><i class="fas fa-shopping-cart"></i> Kasir / Checkout</a></li>
+                <li><a href="tracking.html" target="_blank"><i class="fas fa-truck"></i> Tracking</a></li>
+            </ul>
+            <ul class="nav-menu" style="margin-top: auto;">
+                <li><a href="#" id="btnLogout" class="text-coral"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-top animate-fade-in">
+                <div>
+                    <h2 class="text-purple" id="greeting">Good Morning, Admin! 👋</h2>
+                    <p class="text-light">Berikut adalah ringkasan toko buku Anda hari ini.</p>
+                </div>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=FF796C&color=fff&rounded=true" alt="Admin" width="40">
+                    <span class="fw-600" id="adminName">Admin</span>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid animate-fade-in">
+                <div class="stat-card bg-purple">
+                    <i class="fas fa-book"></i>
+                    <p>Total Buku Tersedia</p>
+                    <h3 id="statTotalBuku">0</h3>
+                </div>
+                <div class="stat-card bg-orange">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Total Pesanan</p>
+                    <h3 id="statTotalPesanan">0</h3>
+                </div>
+                <div class="stat-card bg-coral">
+                    <i class="fas fa-wallet"></i>
+                    <p>Pendapatan (Estimasi)</p>
+                    <h3 id="statPendapatan">Rp 0</h3>
+                </div>
+            </div>
+            
+            <!-- Info Banner -->
+            <div class="card animate-fade-in" style="background: linear-gradient(135deg, var(--fresh-green), #68B388); color: white;">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h3>Cek Stok Buku!</h3>
+                        <p>Beberapa buku populer mungkin kehabisan stok. Periksa halaman katalog sekarang.</p>
+                    </div>
+                    <a href="stok.html" class="btn" style="background: white; color: var(--fresh-green);">Lihat Stok</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

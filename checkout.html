@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout - StoryVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .checkout-layout { display: flex; gap: 30px; padding: 40px 50px; }
+        .product-area { flex: 2; }
+        .cart-area { flex: 1; background: var(--white); padding: 25px; border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); height: fit-content; position: sticky; top: 100px; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #eee; }
+    </style>
+</head>
+<body>
+    <nav class="public-nav">
+        <div class="brand"><i class="fas fa-book-open"></i> StoryVerse</div>
+        <a href="tracking.html" class="btn btn-outline">Track Pesanan</a>
+    </nav>
+
+    <div class="checkout-layout">
+        <div class="product-area">
+            <h2 class="mb-2 text-purple">Pilih Buku Anda ✨</h2>
+            <div class="book-grid" id="shopContainer"></div>
+        </div>
+        
+        <div class="cart-area">
+            <h3 class="mb-2">Keranjang Belanja</h3>
+            <div id="cartItems" class="mb-2" style="min-height: 150px;">
+                <p class="text-light" style="text-align:center; margin-top:20px;">Keranjang kosong.</p>
+            </div>
+            <div class="flex justify-between fw-600 mb-2" style="font-size: 1.2rem;">
+                <span>Total:</span>
+                <span class="text-coral" id="cartTotal">Rp 0</span>
+            </div>
+            
+            <form id="checkoutForm">
+                <div class="input-group">
+                    <label>Nama Pemesan</label>
+                    <input type="text" id="cNama" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Checkout Sekarang</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/data.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+</html>

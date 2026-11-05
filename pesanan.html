@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Laporan Pesanan - StoryVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .order-card {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
+            align-items: center;
+            padding: 15px 25px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            margin-bottom: 15px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+        .order-card:hover {
+            transform: translateX(5px);
+            border-left: 4px solid var(--deep-purple);
+        }
+        /* Header List (bukan elemen tabel) */
+        .order-header {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr;
+            padding: 0 25px 10px;
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        @media(max-width: 768px) {
+            .order-card, .order-header {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .order-header { display: none; } /* Sembunyikan header di HP */
+            .order-card { border-left: 4px solid var(--coral); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="brand"><i class="fas fa-book-open"></i> StoryVerse</div>
+            <ul class="nav-menu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="stok.html"><i class="fas fa-box-open"></i> Stok & Katalog</a></li>
+                <li><a href="pesanan.html" class="active"><i class="fas fa-clipboard-list"></i> History Pesanan</a></li>
+                <li><a href="checkout.html" target="_blank"><i class="fas fa-shopping-cart"></i> Kasir / Checkout</a></li>
+                <li><a href="tracking.html" target="_blank"><i class="fas fa-truck"></i> Tracking</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-top animate-fade-in">
+                <div>
+                    <h2 class="text-purple">Laporan & History Pesanan 📦</h2>
+                    <p class="text-light">Kelola transaksi dan update status pengiriman ke pelanggan.</p>
+                </div>
+            </div>
+
+            <!-- List Pesanan -->
+            <div class="animate-fade-in">
+                <div class="order-header">
+                    <div>No. Resi</div>
+                    <div>Pelanggan</div>
+                    <div>Total Harga</div>
+                    <div>Status</div>
+                    <div>Aksi</div>
+                </div>
+                <div id="orderContainer">
+                    <!-- Data pesanan akan dirender di sini via JS -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/pesanan.js"></script>
+</body>
+</html>
